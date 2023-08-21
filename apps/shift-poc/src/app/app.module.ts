@@ -23,6 +23,8 @@ import { ReasonsForActionsComponent } from './reasons-for-actions/reasons-for-ac
 import { UsersComponent } from './users/users.component';
 import { AccessProfilesComponent } from './access-profiles/access-profiles.component';
 import { DevicesComponent } from './devices/devices.component';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { DevicesComponent } from './devices/devices.component';
     NzTableModule,
     NzDividerModule,
     NzButtonModule,
+    NzSwitchModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],

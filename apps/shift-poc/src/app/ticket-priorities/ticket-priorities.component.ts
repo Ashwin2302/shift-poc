@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TicketPrioritiesComponent {
   tableColumns: string[] = ['Priority','Acronym','Preferential','Color','Order'];
+  tableFields: string[] = ['priority','acronym','preferential','color','order']
   tableData: any[] = [
-    { name: 'Product1'},
-    { name: 'Product2'},
-    // ... more data items
+    { priority: 'Elderly',acronym:'ELD',preferential:'Yes',color:'yellow',order:'1',status:true},
+    { priority: 'Regular',acronym:'RED',preferential:'NO',color:'blue',order:'6',status:true},
   ];
 }

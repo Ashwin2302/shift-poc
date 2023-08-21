@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class StatusMonitorComponent {
   tableColumns: string[] = ["Template's name"];
+  tableFields: string[] = ['templatesName']
   tableData: any[] = [
-    { name: 'P1'},
-    { name: 'Product2'},
-    // ... more data items
+    { templatesName: 'Labshift',status:true},
+    { templatesName: 'Labshift - clinicas',status:true},
   ];
 }

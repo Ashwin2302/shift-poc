@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TemplatesOfKioskComponent {
   tableColumns: string[] = ["Template's name"];
+  tableFields: string[] = ['templatesName']
   tableData: any[] = [
-    { name: 'Product1'},
-    { name: 'Product2'},
-    // ... more data items
+    { templatesName: 'Labshift',status:true},
+    { templatesName: 'Labshift - clinicas',status:true},
   ];
 }

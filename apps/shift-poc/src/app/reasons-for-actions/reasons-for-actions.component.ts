@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ReasonsForActionsComponent {
   tableColumns: string[] = ['Reason','Purpose'];
+  tableFields: string[] = ['reason','purpose']
   tableData: any[] = [
-    { name: 'Product1'},
-    { name: 'Product2' },
-    // ... more data items
+    { reason: 'Patient with more than one ticket',purpose:'dropout',status:true},
+    { reason: 'Crowded',purpose:'cancelling',status:true},
   ];
 }

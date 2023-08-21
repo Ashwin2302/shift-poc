@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DevicesComponent {
   tableColumns: string[] = ['Device name','Device type','Clinical setting','Action situation'];
+  tableFields: string[] = ['deviceName', 'deviceType','clinicalSetting','actionSituation']
   tableData: any[] = [
-    { name: 'Product1'},
-    { name: 'Product2'},
-    // ... more data items
+    { deviceName:'Matriz - Coleta', deviceType:'Coleta',clinicalSetting:'Matriz',actionSituation:'Not generated',status:true},
+    { deviceName:'Matriz - Totern', deviceType:'Totern',clinicalSetting:'Matriz',actionSituation:'Waiting',status:true},
   ];
 }

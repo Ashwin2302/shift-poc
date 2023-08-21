@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ServiceQueuesComponent {
   tableColumns: string[] = ["Structure's name"];
+  tableFields: string[] = ['structuresName']
   tableData: any[] = [
-    { name: 'Only clinical lab tests'},
-    { name: 'Only image'},
-    { name: 'Diagnostic center' },
-    // ... more data items
+    { structuresName: 'Only clinical lab tests',status:true},
+    { structuresName: 'Only image',status:true},
+    { structuresName: 'Diagnostic center',status:true},
   ];
 }

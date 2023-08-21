@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AccessProfilesComponent {
   tableColumns: string[] = ['Access profiles'];
+  tableFields: string[] = ['accessProfiles']
   tableData: any[] = [
-    { name: 'Product1' },
-    { name: 'Product2' },
-    // ... more data items
+    { accessProfiles: 'Nurse' ,status:true},
+    { accessProfiles: 'I.T.' ,status:true},
   ];
 }

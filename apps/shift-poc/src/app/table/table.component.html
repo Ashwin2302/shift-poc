@@ -8,10 +8,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of dataSet">
-        <td>{{ data.name }}</td>
-        <td>true</td>
-        <td class="font-weight">...</td>
+        <ng-container *ngFor="let field of tableFields">
+          <td>{{ data[field] }}</td>
+        </ng-container>
+        <td><nz-switch [(ngModel)]="data.status" nzCheckedChildren="Active" nzUnCheckedChildren="InActive"></nz-switch> </td>
+        <td class="font-weight dot-allign">...</td>
       </tr>
     </tbody>
   </nz-table>
-  
+ 
