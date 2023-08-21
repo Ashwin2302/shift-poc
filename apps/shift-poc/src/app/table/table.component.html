@@ -1,0 +1,17 @@
+<nz-table #dynamicTable [nzData]="dataSet">
+    <thead>
+      <tr>
+        <th class="font-weight" *ngFor="let column of columns">{{ column }}</th>
+        <th class="font-weight">Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataSet">
+        <td>{{ data.name }}</td>
+        <td>true</td>
+        <td class="font-weight">...</td>
+      </tr>
+    </tbody>
+  </nz-table>
+  

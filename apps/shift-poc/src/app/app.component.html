@@ -12,30 +12,35 @@
         </a>
       </div>
       <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a routerLink="/welcome">Gestão de licenças</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Relatórios</a>
-            </li>
-          </ul>
+        
         <li nz-submenu nzOpen nzTitle="Configurações" nzIcon="form">
           <ul>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/platform">Plataformas</a>
+              <a routerLink="/service-queues">Service queues structures</a>
             </li>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/product">Produtos</a>
+              <a routerLink="/clinical-settings">Clinical settings</a>
             </li>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/module">Módulos</a>
+              <a routerLink="/ticket-priorites">Ticket priorities</a>
             </li>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/license">Licenças</a>
+              <a routerLink="/kiosk">Templates of kiosk</a>
             </li>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/corporate">Códigos corporativos</a>
+              <a routerLink="/status-monitor">Templates of status monitor</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/reason-actions">Reasons for actions</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/users">Users</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/access-profiles">Access Profiles</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/devices">Devices</a>
             </li>
           </ul>
         </li>
