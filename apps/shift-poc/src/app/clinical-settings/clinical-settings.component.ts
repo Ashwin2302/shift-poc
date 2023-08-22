@@ -12,4 +12,16 @@ export class ClinicalSettingsComponent {
     { clinincalSetting: 'Head',queuesStructure:'Diagnostic test',status:true},
     { clinincalSetting: 'Sao Miguel',queuesStructure:'Only clinical lab test',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.clinincalSetting.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }
+

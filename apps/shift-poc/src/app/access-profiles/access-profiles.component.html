@@ -1,1 +1,8 @@
-<nx-shiftworkspace-table [columns]="tableColumns" [dataSet]="tableData" [tableFields]="tableFields"></nx-shiftworkspace-table>
+
+<app-search-bar (searchTextChanged)="onSearchTextChange($event)"></app-search-bar>
+<app-custom-button label="New access profile" (click)="showModal()">
+    </app-custom-button>
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    
+    </nz-modal>
+<nx-shiftworkspace-table [columns]="tableColumns" [dataSet]="filteredTableData" [tableFields]="tableFields"></nx-shiftworkspace-table>

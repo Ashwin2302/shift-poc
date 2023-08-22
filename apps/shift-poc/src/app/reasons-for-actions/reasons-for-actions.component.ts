@@ -12,4 +12,15 @@ export class ReasonsForActionsComponent {
     { reason: 'Patient with more than one ticket',purpose:'dropout',status:true},
     { reason: 'Crowded',purpose:'cancelling',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.reason.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }

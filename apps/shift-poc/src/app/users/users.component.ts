@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'nx-shiftworkspace-users',
@@ -12,4 +12,15 @@ export class UsersComponent{
     { fullName: 'John Brito',userName:'John',accessProfile:'Receptionist',status:true},
     { fullName: 'Maria John',userName:'Maria',accessProfile:'HealthCareProvide',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.fullName.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }

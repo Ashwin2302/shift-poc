@@ -1,1 +1,4 @@
-<nx-shiftworkspace-table [columns]="tableColumns" [dataSet]="tableData" [tableFields]="tableFields"></nx-shiftworkspace-table>
+<app-search-bar (searchTextChanged)="onSearchTextChange($event)"></app-search-bar>
+<app-custom-button label="New priority"></app-custom-button>
+
+<nx-shiftworkspace-table [columns]="tableColumns" [dataSet]="filteredTableData" [tableFields]="tableFields"></nx-shiftworkspace-table>

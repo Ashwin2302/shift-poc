@@ -12,4 +12,15 @@ export class TemplatesOfKioskComponent {
     { templatesName: 'Labshift',status:true},
     { templatesName: 'Labshift - clinicas',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.templatesName.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }

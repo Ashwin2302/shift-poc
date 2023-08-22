@@ -12,4 +12,15 @@ export class DevicesComponent {
     { deviceName:'Matriz - Coleta', deviceType:'Coleta',clinicalSetting:'Matriz',actionSituation:'Not generated',status:true},
     { deviceName:'Matriz - Totern', deviceType:'Totern',clinicalSetting:'Matriz',actionSituation:'Waiting',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.deviceName.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }

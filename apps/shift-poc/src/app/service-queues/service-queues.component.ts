@@ -13,4 +13,15 @@ export class ServiceQueuesComponent {
     { structuresName: 'Only image',status:true},
     { structuresName: 'Diagnostic center',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.structuresName.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }

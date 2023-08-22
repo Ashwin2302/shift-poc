@@ -24,7 +24,11 @@ import { UsersComponent } from './users/users.component';
 import { AccessProfilesComponent } from './access-profiles/access-profiles.component';
 import { DevicesComponent } from './devices/devices.component';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
-
+import { SearchBarComponent } from './search/search-bar.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CustomButtonComponent } from './custom-button/custom-button.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzI18nModule } from 'ng-zorro-antd/i18n';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     TicketPrioritiesComponent,
     TemplatesOfKioskComponent,
     StatusMonitorComponent,
+    SearchBarComponent,
+    CustomButtonComponent,
     ReasonsForActionsComponent,
     UsersComponent,
     AccessProfilesComponent,
@@ -49,7 +55,10 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     NzLayoutModule,
     NzMenuModule,
     NzButtonModule,
+    NzModalModule,
     NzTableModule,
+    NzI18nModule,
+    NzIconModule,
     NzDividerModule,
     NzButtonModule,
     NzSwitchModule,

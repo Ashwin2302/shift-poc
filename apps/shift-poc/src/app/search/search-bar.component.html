@@ -1,0 +1,7 @@
+<nz-input-group>
+    <input nz-input class="search-box"
+           [placeholder]="placeholder"
+           [(ngModel)]="searchText"
+           (input)="performSearch()">
+    <span nz-icon nzType="search" class="search-icon"></span>
+  </nz-input-group>

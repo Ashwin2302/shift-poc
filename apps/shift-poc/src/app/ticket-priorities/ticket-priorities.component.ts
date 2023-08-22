@@ -12,4 +12,15 @@ export class TicketPrioritiesComponent {
     { priority: 'Elderly',acronym:'ELD',preferential:'Yes',color:'yellow',order:'1',status:true},
     { priority: 'Regular',acronym:'RED',preferential:'NO',color:'blue',order:'6',status:true},
   ];
+  filteredTableData: any[] = [];
+
+  ngOnInit(): void {
+    this.filteredTableData = [...this.tableData];
+  }
+
+  onSearchTextChange(searchText: string): void {
+    this.filteredTableData = this.tableData.filter(item =>
+      item.priority.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
 }
