@@ -1,7 +1,5 @@
-// custom-button.component.ts
 import { Component, Input } from '@angular/core';
 import { NzButtonType, NzButtonSize } from 'ng-zorro-antd/button';
-import { NzI18nService, en_US } from 'ng-zorro-antd/i18n';
 
 @Component({
   selector: 'app-custom-button',

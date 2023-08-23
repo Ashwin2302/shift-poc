@@ -29,6 +29,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzI18nModule } from 'ng-zorro-antd/i18n';
+import { ConfigHeadComponent } from './config-head/config-head.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { NzI18nModule } from 'ng-zorro-antd/i18n';
     UsersComponent,
     AccessProfilesComponent,
     DevicesComponent,
+    ConfigHeadComponent,
   ],
   imports: [
     BrowserModule,

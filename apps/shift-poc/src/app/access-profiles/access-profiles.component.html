@@ -1,8 +1,9 @@
+<config-head  title="Access Profiles"></config-head>
+
 
 <app-search-bar (searchTextChanged)="onSearchTextChange($event)"></app-search-bar>
 <app-custom-button label="New access profile" (click)="showModal()">
     </app-custom-button>
-    <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-    
-    </nz-modal>
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="New access profile" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"> </nz-modal>
+ 
 <nx-shiftworkspace-table [columns]="tableColumns" [dataSet]="filteredTableData" [tableFields]="tableFields"></nx-shiftworkspace-table>
