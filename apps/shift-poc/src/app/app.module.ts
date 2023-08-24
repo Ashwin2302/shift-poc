@@ -30,6 +30,8 @@ import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzI18nModule } from 'ng-zorro-antd/i18n';
 import { ConfigHeadComponent } from './config-head/config-head.component';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { ConfigHeadComponent } from './config-head/config-head.component';
     NzModalModule,
     NzTableModule,
     NzI18nModule,
+    NzPopoverModule,
     NzIconModule,
+    NzAvatarModule,
     NzDividerModule,
     NzButtonModule,
     NzSwitchModule,

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nx serve shift-poc",
     "build": "nx build",
-    "test": "nx test"
+    "test": "npx nx run shift-poc:test"
   },
   "private": true,
   "dependencies": {

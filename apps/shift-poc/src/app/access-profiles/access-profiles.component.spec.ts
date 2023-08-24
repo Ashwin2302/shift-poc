@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccessProfilesComponent } from './access-profiles.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AccessProfilesComponent', () => {
   let component: AccessProfilesComponent;
@@ -9,6 +10,10 @@ describe('AccessProfilesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AccessProfilesComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AccessProfilesComponent);

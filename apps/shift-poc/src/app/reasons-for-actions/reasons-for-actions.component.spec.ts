@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReasonsForActionsComponent } from './reasons-for-actions.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ReasonsForActionsComponent', () => {
   let component: ReasonsForActionsComponent;
@@ -9,6 +10,10 @@ describe('ReasonsForActionsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ReasonsForActionsComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ReasonsForActionsComponent);

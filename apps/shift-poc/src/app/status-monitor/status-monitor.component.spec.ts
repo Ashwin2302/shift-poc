@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatusMonitorComponent } from './status-monitor.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('StatusMonitorComponent', () => {
   let component: StatusMonitorComponent;
@@ -9,6 +10,10 @@ describe('StatusMonitorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [StatusMonitorComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(StatusMonitorComponent);

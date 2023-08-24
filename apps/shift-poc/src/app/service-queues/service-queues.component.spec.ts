@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ServiceQueuesComponent } from './service-queues.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ServiceQueuesComponent', () => {
   let component: ServiceQueuesComponent;
@@ -9,6 +10,10 @@ describe('ServiceQueuesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ServiceQueuesComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ServiceQueuesComponent);

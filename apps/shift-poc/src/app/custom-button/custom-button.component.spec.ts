@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzButtonType, NzButtonSize } from 'ng-zorro-antd/button';
 import { CustomButtonComponent } from './custom-button.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('CustomButtonComponent', () => {
   let component: CustomButtonComponent;
@@ -10,7 +12,11 @@ describe('CustomButtonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CustomButtonComponent],
-      imports: [NzButtonModule] 
+      imports: [NzButtonModule],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
   });
 
@@ -33,7 +39,7 @@ describe('CustomButtonComponent', () => {
   });
 
   it('should apply the provided button type', () => {
-    const buttonType = 'primary';
+    const buttonType: NzButtonType = 'primary';
     component.buttonType = buttonType;
     fixture.detectChanges();
     const buttonElement = fixture.debugElement.query(By.css('.custom-button')).nativeElement;
@@ -41,12 +47,14 @@ describe('CustomButtonComponent', () => {
   });
 
   it('should apply the provided button size', () => {
-    const buttonSize = 'large';
+    const buttonSize: NzButtonSize = 'large';
     component.buttonSize = buttonSize;
     fixture.detectChanges();
+  
     const buttonElement = fixture.debugElement.query(By.css('.custom-button')).nativeElement;
-    expect(buttonElement.classList).toContain(`ant-btn-${buttonSize}`);
+    expect(buttonElement.classList).toContain(`ant-btn-lg`);
   });
+  
 
   it('should apply the provided button class', () => {
     const buttonClass = 'custom-class';

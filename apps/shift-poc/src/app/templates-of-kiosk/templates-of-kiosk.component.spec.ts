@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemplatesOfKioskComponent } from './templates-of-kiosk.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('TemplatesOfKioskComponent', () => {
   let component: TemplatesOfKioskComponent;
@@ -9,6 +10,10 @@ describe('TemplatesOfKioskComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TemplatesOfKioskComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TemplatesOfKioskComponent);

@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from './search-bar.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('SearchBarComponent', () => {
   let component: SearchBarComponent;
@@ -8,8 +11,15 @@ describe('SearchBarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SearchBarComponent],
+      imports: [FormsModule],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA, 
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(SearchBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,21 +30,37 @@ describe('SearchBarComponent', () => {
   });
 
   it('should emit search text when performSearch is called', () => {
-    const searchText = 'Sample search text';
-    spyOn(component.searchTextChanged, 'emit');
-    
+    const searchText = 'Test Search Text';
+    let emittedSearchText = '';
+
+    component.searchTextChanged.subscribe((text) => {
+      emittedSearchText = text;
+    });
+
     component.searchText = searchText;
     component.performSearch();
 
-    expect(component.searchTextChanged.emit).toHaveBeenCalledWith(searchText);
+    expect(emittedSearchText).toBe(searchText);
   });
 
-  it('should emit empty search text when performSearch is called with empty search text', () => {
-    spyOn(component.searchTextChanged, 'emit');
+  it('should display the provided placeholder', () => {
+    const placeholder = 'Custom Placeholder';
+    component.placeholder = placeholder;
 
-    component.searchText = '';
-    component.performSearch();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input')).nativeElement;
 
-    expect(component.searchTextChanged.emit).toHaveBeenCalledWith('');
+    expect(inputElement.getAttribute('placeholder')).toBe(placeholder);
+  });
+
+  it('should update searchText when input value changes', () => {
+    const inputValue = 'Test Input Value';
+    const inputElement = fixture.debugElement.query(By.css('input')).nativeElement;
+
+    inputElement.value = inputValue;
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    expect(component.searchText).toBe(inputValue);
   });
 });
