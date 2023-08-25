@@ -107,7 +107,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       #welcome span {
         display: block;
         font-size: 1.875rem;
-        font-weight: 300;
+        font-weight: 500;
         line-height: 2.25rem;
         margin-bottom: 0.5rem;
       }
@@ -205,7 +205,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       }
       .list-item-link > span {
         flex-grow: 1;
-        font-weight: 400;
+        font-weight: 500;
         transition-property: background-color, border-color, color, fill, stroke,
           opacity, box-shadow, transform, filter, backdrop-filter,
           -webkit-backdrop-filter;
@@ -217,7 +217,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
         display: block;
         flex-grow: 1;
         font-size: 0.75rem;
-        font-weight: 300;
+        font-weight: 500;
         line-height: 1rem;
         transition-property: background-color, border-color, color, fill, stroke,
           opacity, box-shadow, transform, filter, backdrop-filter,
@@ -268,7 +268,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       }
       .button-pill > span {
         letter-spacing: -0.025em;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1.125rem;
         line-height: 1.75rem;
         padding-left: 1rem;
@@ -277,7 +277,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       .button-pill span span {
         display: block;
         font-size: 0.875rem;
-        font-weight: 300;
+        font-weight: 500;
         line-height: 1.25rem;
       }
       .button-pill:hover svg,
@@ -314,7 +314,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       }
       #nx-cloud > div h2 {
         font-size: 1.125rem;
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: -0.025em;
         line-height: 1.75rem;
         padding-left: 1rem;
@@ -323,7 +323,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       #nx-cloud > div h2 span {
         display: block;
         font-size: 0.875rem;
-        font-weight: 300;
+        font-weight: 500;
         line-height: 1.25rem;
       }
       #nx-cloud p {
@@ -353,7 +353,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       }
       #commands h2 {
         font-size: 1.25rem;
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: -0.025em;
         line-height: 1.75rem;
         padding-left: 1rem;
@@ -361,7 +361,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       }
       #commands p {
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: 500;
         line-height: 1.5rem;
         margin-top: 1rem;
         padding-left: 1rem;
@@ -381,7 +381,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       summary {
         border-radius: 0.5rem;
         display: flex;
-        font-weight: 400;
+        font-weight: 500;
         padding: 0.5rem;
         cursor: pointer;
         transition-property: background-color, border-color, color, fill, stroke,
