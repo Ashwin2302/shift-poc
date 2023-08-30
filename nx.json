@@ -15,7 +15,7 @@
       "inputs": ["production", "^production"]
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^production", "{workspaceRoot}/karma.conf.js"]
     },
     "e2e": {
       "inputs": ["default", "^production"]
@@ -28,27 +28,17 @@
       ]
     }
   },
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/.eslintrc.json"
-    ],
-    "sharedGlobals": []
-  },
+  
   "generators": {
     "@nrwl/angular:application": {
       "style": "less",
       "linter": "eslint",
-      "unitTestRunner": "jest",
+      "unitTestRunner": "karma",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "karma"
     },
     "@nrwl/angular:component": {
       "style": "less"

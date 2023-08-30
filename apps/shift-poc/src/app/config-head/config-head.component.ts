@@ -12,7 +12,7 @@ export class ConfigHeadComponent implements OnInit {
   @Input() title = '';
   @Input() subtitle = '';
 
-  userName = 'vinosi kumar';
+  userName = 'user name';
  
   
 }

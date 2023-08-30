@@ -1,20 +1,24 @@
 {
   "name": "shift-poc",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/shift-poc/src",
-  "prefix": "nx-shiftworkspace",
+  "prefix": "slb",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/shift-poc",
+        "outputPath": "build/apps/shift-poc",
         "index": "apps/shift-poc/src/index.html",
         "main": "apps/shift-poc/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/shift-poc/tsconfig.app.json",
         "inlineStyleLanguage": "less",
+        "allowedCommonJsDependencies": [
+          "file-saver",
+          "moment"
+       ],
         "assets": [
           "apps/shift-poc/src/favicon.ico",
           "apps/shift-poc/src/assets",
@@ -22,9 +26,11 @@
             "glob": "**/*",
             "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
             "output": "/assets/"
-          }],
-          "styles": ["node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
-          "scripts": []
+          }
+        ],
+        "styles": ["node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
+
+        "scripts": []
       },
       "configurations": {
         "production": {
@@ -82,17 +88,14 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "@angular-devkit/build-angular:karma",
       "options": {
-        "jestConfig": "apps/shift-poc/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "tsConfig": "apps/shift-poc/tsconfig.spec.json",
+        "karmaConfig": "apps/shift-poc/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"],
+        "styles": [],
+        "scripts": [],
+        "assets": []
       }
     }
   },
