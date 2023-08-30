@@ -10,7 +10,7 @@ module.exports = function (config) {
     ...baseConfig,
     coverageReporter: {
       ...baseConfig.coverageReporter,
-      dir: join(__dirname, '../../coverage/apps/shift-licensing-backoffice'),
+      dir: join(__dirname, '../../coverage/apps/shift-poc'),
     },
   });
 };
