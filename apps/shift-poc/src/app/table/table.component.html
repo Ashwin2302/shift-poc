@@ -1,8 +1,8 @@
 <nz-table #dynamicTable [nzData]="dataSet">
     <thead>
-      <tr>
-        <th class="font-weight" *ngFor="let column of columns">{{ column }}</th>
-        <th class="font-weight">Status</th>
+      <tr >
+        <th class="font-weight" *ngFor="let column of columns" [nzShowSort]="column.sortAccess" [nzSortFn]="true"	[nzShowFilter]="column.filterAccess" [nzFilterMultiple]="true" >{{ column.name }}</th>
+        <th  class="font-weight" nzColumnKey="status" [nzFilters]="filterAccess" [nzFilterFn]="true">Status</th>
         <th></th>
       </tr>
     </thead>

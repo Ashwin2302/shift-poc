@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NzI18nService, en_US } from 'ng-zorro-antd/i18n';
 
 @Component({
   selector: 'nx-shiftworkspace-clinical-settings',
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./clinical-settings.component.less'],
 })
 export class ClinicalSettingsComponent {
-  tableColumns: string[] = ['Clinical Setting','Queues Structure'];
+  // tableColumns: string[] = ['Clinical Setting','Queues Structure'];
+  tableColumns:any = [
+    {name:"Clinical Setting",sortAccess:true},
+    {name:"Queues Structure",sortAccess:true},
+    // {name:"Status",filterAccess:true}
+  ];
+
   tableFields: string[] = ['clinincalSetting', 'queuesStructure']
   tableData: any[] = [
     { clinincalSetting: 'Head',queuesStructure:'Diagnostic test',status:true},
@@ -17,7 +24,9 @@ export class ClinicalSettingsComponent {
   ngOnInit(): void {
     this.filteredTableData = [...this.tableData];
   }
-
+  constructor(private i18n: NzI18nService) { 
+    this.i18n.setLocale(en_US); 
+    }
   onSearchTextChange(searchText: string): void {
     this.filteredTableData = this.tableData.filter(item =>
       item.clinincalSetting.toLowerCase().includes(searchText.toLowerCase())

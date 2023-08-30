@@ -31,6 +31,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ConfigHeadComponent } from './config-head/config-head.component';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzI18nModule } from 'ng-zorro-antd/i18n';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     NzLayoutModule,
     NzMenuModule,
     NzButtonModule,
+    NzI18nModule,
     NzModalModule,
     NzTableModule,
     NzPopoverModule,
