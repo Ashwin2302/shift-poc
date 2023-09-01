@@ -1,7 +1,7 @@
 <nz-table #dynamicTable [nzData]="dataSet">
     <thead>
       <tr >
-        <th class="font-weight" *ngFor="let column of columns" [nzShowSort]="column.sortAccess" [nzSortFn]="true"	[nzShowFilter]="column.filterAccess" [nzFilterMultiple]="true" >{{ column.name }}</th>
+        <th class="font-weight" *ngFor="let column of tableColumns" [nzShowSort]="column.sortAccess" [nzSortFn]="true"	[nzShowFilter]="column.filterAccess" [nzFilterMultiple]="true" >{{ column.name }}</th>
         <th  class="font-weight" nzColumnKey="status" [nzFilters]="filterAccess" [nzFilterFn]="true">Status</th>
         <th></th>
       </tr>
@@ -12,7 +12,23 @@
           <td>{{ data[field] }}</td>
         </ng-container>
         <td><nz-switch [(ngModel)]="data.status" nzCheckedChildren="Active" nzUnCheckedChildren="InActive"></nz-switch> </td>
-        <td class="font-weight dot-allign">...</td>
+        <!-- <td class="font-weight dot-allign" >...</td> -->
+        <td style="width: 10%;">
+          <button nz-button
+          style="border: none; background-color: white;"
+          nz-popover
+          nzPopoverTrigger="click"
+          [nzPopoverContent]="contentTemplate"
+          (click)="popover=true"
+          [nzPopoverPlacement]="placement"
+          ><b class="dot">...</b></button>
+        </td>
+        <ng-template #contentTemplate class="dotCard">
+          <p>
+          <span nz-icon nzType="edit"></span> Edit </p>
+          <p 
+          class="MoreOption"><span class="flip-horizontal" nz-icon nzType="history"></span> History</p>
+        </ng-template>
       </tr>
     </tbody>
   </nz-table>

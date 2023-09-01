@@ -6,12 +6,14 @@ import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./table.component.less'],
 })
 export class TableComponent implements OnInit{
-  @Input() columns:any;
+  @Input() tableColumns:any;
+  @Input() listOfColumns1:any;
   @Input() dataSet: any[] = [];
   @Input() tableFields: string[] = [];
   switchValue = false;
   loading = false;
   popover =false;
+  placement = 'bottom';
   
   filterAccess = [
     { text: 'Active', value: 'Active' },
@@ -20,7 +22,7 @@ export class TableComponent implements OnInit{
   
   
   ngOnInit(): void {
-    console.log("columns---------------__>",this.columns);
+    console.log("columns---------------__>",this.tableColumns);
     console.log("data set---------------__>",this.dataSet)
     console.log("table field",this.tableFields);
 
